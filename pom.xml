@@ -115,6 +115,7 @@
                 <configuration>
                     <!--<jvmArgs>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=y</jvmArgs> per debug-->
                     <jvmArgs>-XX:+UnlockCommercialFeatures -XX:+FlightRecorder</jvmArgs><!--per usare jmc e quindi fligh recorder-->
+                    <!--<jvmArgs>-XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:c:/temp/gc.log</jvmArgs> per abilitare il log del GC-->
                 </configuration>
             </plugin>
         </plugins>
