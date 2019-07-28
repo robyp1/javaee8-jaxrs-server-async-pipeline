@@ -1,4 +1,4 @@
-package com.wordpress.abhirockzz.javaee8.jaxrs.api;
+package com.wordpress.abhirockzz.javaee8.service;
 
 import com.wordpress.abhirockzz.javaee8.jaxrs.model.Data;
 
@@ -22,12 +22,12 @@ public class FailoverExample {
      * @return
      */
     public Data sites(){
-       return (Data) Stream.<Supplier<Data>>of(
+       return Stream.<Supplier<Data>>of(
                () -> getData("http://localhost:8080/booking/", "/1"),
                () -> getData("http://localhost:8080/booking/","/2"))
        .filter(Objects::nonNull)
                .findFirst()
-               .orElseThrow(()-> new IllegalStateException("No avaliable remote server"));
+               .orElseThrow(()-> new IllegalStateException("No avaliable remote server")).get();
 
         }
 

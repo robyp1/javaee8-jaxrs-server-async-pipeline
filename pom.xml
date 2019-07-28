@@ -113,8 +113,8 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>${version.wildfly.maven.plugin}</version>
                 <configuration>
-                    <!--<jvmArgs>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=y</jvmArgs> per debug-->
-                    <jvmArgs>-XX:+UnlockCommercialFeatures -XX:+FlightRecorder</jvmArgs><!--per usare jmc e quindi fligh recorder-->
+                    <jvmArgs>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=y</jvmArgs> <!--per debug-->
+                    <!--<jvmArgs>-XX:+UnlockCommercialFeatures -XX:+FlightRecorder</jvmArgs>&lt;!&ndash;per usare jmc e quindi fligh recorder&ndash;&gt;-->
                     <!--<jvmArgs>-XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:c:/temp/gc.log</jvmArgs> per abilitare il log del GC-->
                 </configuration>
             </plugin>

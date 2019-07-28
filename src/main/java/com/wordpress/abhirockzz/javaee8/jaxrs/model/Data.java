@@ -11,4 +11,11 @@ public class Data {
     public void setResponse(String response) {
         this.response = response;
     }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "response='" + response + '\'' +
+                '}';
+    }
 }
