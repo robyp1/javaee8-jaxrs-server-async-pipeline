@@ -53,4 +53,6 @@ public class FailoverExample {
         }
         return ( response.getStatus() > 412);//404 page non found or 412 are not
     }
+
+
 }
