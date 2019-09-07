@@ -1,7 +1,5 @@
 package com.wordpress.abhirockzz.javaee8.builder;
 
-import java.math.BigDecimal;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,11 +40,11 @@ public class mainBuilderTest {
                         )
                 );
 
-        String num = "123,90";
-        NumberFormat nbf = NumberFormat.getInstance();
-        Number number = nbf.parse(num);
-        BigDecimal bigDecimal = new BigDecimal(number.toString()).setScale(2);
-        System.out.println(bigDecimal);
+//        String num = "123,90";
+//        NumberFormat nbf = NumberFormat.getInstance();
+//        Number number = nbf.parse(num);
+//        BigDecimal bigDecimal = new BigDecimal(number.toString()).setScale(2);
+//        System.out.println(bigDecimal);
 
     }
 
