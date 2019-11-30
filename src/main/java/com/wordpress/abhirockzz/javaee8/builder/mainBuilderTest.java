@@ -8,6 +8,9 @@ import java.util.stream.LongStream;
 
 import static java.util.stream.Collectors.toMap;
 
+/**
+ * esempio di Builder Pattern con lambda e functional programming
+ */
 public class mainBuilderTest {
 
     public static void main(String[] args) throws ParseException {
@@ -26,7 +29,11 @@ public class mainBuilderTest {
                         )).build();//create a Person
         System.out.println(person);
 
+        //altro test
         //test heap, meanwwhile it run launch jvm profiler
+        //crea una mappa che ha per chiave la funzione identità (1,2,3..n) e per valori i risultati del metodo  pointFrom,
+        //la funzione di merge dice come comportarsi con chiavi duplicate, in questo caso torna una illegalStateException
+        // e ultimo parametro è la funzione di inizializzazione o supplier  cioè la mappa vuota
         final Map<Long, FillMaps.Point> m = LongStream.range(0, 1_000_000)
                 .boxed()
                 .collect(

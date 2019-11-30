@@ -19,6 +19,10 @@ public class PerformanceExtension implements Extension {
 
     private boolean enabled;
 
+    /**
+     * carica file di configurazioni per applicare poi dinamicamente le annotazioni
+     * @param beforeBeanDiscovery
+     */
     void loadConfiguration(final @Observes BeforeBeanDiscovery beforeBeanDiscovery){
         try (final InputStream configStream = Thread.currentThread()
                 .getContextClassLoader()
@@ -33,6 +37,12 @@ public class PerformanceExtension implements Extension {
         enabled = Boolean.parseBoolean(configuration.getProperty("enabled", "false"));
     }
 
+    /**
+     * aggiunge dinamicamente l'annotazione monitor a tutte le classi che sono abilitate nel file
+     * di configurazione caricato nel metodo sopra
+     * @param pat
+     * @param <A>
+     */
     <A> void processAnnotatedType(final @Observes ProcessAnnotatedType<A> pat){
         if (!enabled){
             return;

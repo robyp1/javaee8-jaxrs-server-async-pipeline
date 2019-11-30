@@ -1,12 +1,9 @@
 package com.wordpress.abhirockzz.javaee8.beansExtension;
 
-import com.wordpress.abhirockzz.javaee8.interceptors.Monitored;
-
 import javax.enterprise.inject.spi.AnnotatedConstructor;
 import javax.enterprise.inject.spi.AnnotatedField;
 import javax.enterprise.inject.spi.AnnotatedMethod;
 import javax.enterprise.inject.spi.AnnotatedType;
-import javax.enterprise.util.AnnotationLiteral;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import java.util.HashSet;
@@ -18,7 +15,12 @@ public class WrapperAnnotatedType<A> implements AnnotatedType<A> {
     private final Set<Annotation> annotations;
 
 
-
+    /**
+     * wrappa le annotazioni già presenti, aggiungendo l'annotazione che viene aggiunta dinamicamente
+     * nel costruttore
+     * @param at
+     * @param additionalAnnotation
+     */
     public WrapperAnnotatedType(final AnnotatedType<A> at, Annotation additionalAnnotation) {
         this.delegate = at;
         this.annotations = new HashSet<Annotation>(at.getAnnotations().size() + 1);
