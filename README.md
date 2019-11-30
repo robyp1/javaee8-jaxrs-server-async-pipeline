@@ -19,3 +19,7 @@ This include example like logging methods time executions with CDI Extension
 - you should see a message like this - `Your driver is john doe and OTP is 1234`
 
 That's it..
+
+#### uso dell'Extension jdk per aggiungere dinamicamente una annotazione Monitoring a CabBookingResource
+#### esmpio di pattern builder con lambda, vedi package builder
+#### esempio di failover, vedi package service FailoverExample
